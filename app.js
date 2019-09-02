@@ -1,4 +1,5 @@
-var url = 'http://www.mca.gov.cn/article/sj/tjbz/a/2018/201803131439.html';
+// find below link from http://www.mca.gov.cn/article/sj/xzqh/
+var url = 'http://www.mca.gov.cn/article/sj/xzqh/2019/201908/201908271607.html'; // up to date
 var http = require('http');
 var cheerio = require('cheerio');
 var fs = require('fs');
@@ -13,7 +14,7 @@ function filterData(html) {
         var label = it.find('td').eq(2).text();
 
         if (!isNaN(value) && value != 0) {
-            courseData.push({ value, label });
+            courseData.push({ value: value.trim(), label: label.trim() }); // trim text
         }
 
     })
@@ -21,6 +22,7 @@ function filterData(html) {
 }
 
 http.get(url, function (res) {
+    res.setEncoding('utf8'); // characters encode fixed
     var html = '';
     res.on('data', function (data) {
         html += data;
