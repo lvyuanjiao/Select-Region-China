@@ -1,0 +1,23 @@
+{
+  "name": "select-region-china",
+  "version": "0.0.1",
+  "description": "npm install cheerio \tNode app.js ## Data \tdata.json \t从国家民政部网站爬取到的数据",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvyuanjiao/Select-Region-China.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvyuanjiao/Select-Region-China/issues"
+  },
+  "homepage": "https://github.com/lvyuanjiao/Select-Region-China#readme",
+  "dependencies": {
+    "cheerio": "~1.0.0-rc.3"
+	}
+}
